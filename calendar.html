@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Event</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+    </head>
+<body>
+    <main class="container">
+        <h1>Jetsukii Calendar Event</h1>
+        <p class="description">
+            Hi semuanya, disini kalian dapat lihat jadwal event aku sepanjang tahun 2025.
+        </p>
+        <div class="calendar-container">
+            <div id="calendar-header0" class="calendar-header0">
+		    <img src="Photo/bannercal.jpg" alt="banner">
+            </div>
+            <div id="calendar-header" class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="header-title"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div id="day-row" class="day-row"></div>
+            <div id="calendar-grid" class="calendar-grid"></div>
+        </div>
+        <div id="event-list" class="event-list">
+            <h2>Event Details</h2>
+            <p></p>
+        </div>
+    </main>
+    <script src="JS/calendar.js"></script>
+</body>
+</html>
