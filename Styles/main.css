@@ -9,7 +9,7 @@ body {
 h1 {
     margin: 10px;
     font-size: 1.8em;
-    color: #4B4E53;	
+    color: #2a2c2f;	
 }
 
 h2 {
@@ -17,7 +17,7 @@ h2 {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 1em;
-    color: #4B4E53; 
+    color: #2a2c2f; 
 }
 
 /* Profile container */
@@ -78,14 +78,14 @@ h2 {
 button {
             background:  transparent;
             height:  40px;
-             border:  2px solid #4B4E53;
+             border:  2px solid #2a2c2f;
              display:  inline-block;
              float:  none;
              text-align:  center;
              width:  100px;
              padding:  0px;
              font-size:  16px;
-            color: #4B4E53;
+            color: #2a2c2f;
             cursor: pointer;
             border-radius: 15px;
             margin-top: 10px;
@@ -93,7 +93,7 @@ button {
         }
 
 button:hover {
-    background-color: #4B4E53;
+    background-color: #2a2c2f;
     color: #fdfdfd;
 }
 
@@ -193,7 +193,7 @@ width:  150px;
 
 .email-section span {
     font-size: 16px; /* Sesuaikan ukuran teks */
-    color: #4B4E53; /* Sesuaikan warna teks */
+    color: #2a2c2f; /* Sesuaikan warna teks */
 }
 
 .extraButtons {
