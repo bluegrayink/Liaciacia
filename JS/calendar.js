@@ -11,52 +11,52 @@ const monthNames = [
 ];
 
 const events = {
-    '2025-01-18': [
+    '2025-05-10': [
         {
-            date: '18-19 Januari',
-            name: 'Event 01',
-            location: 'Location',
-            description: 'info'
+            date: '10-11 Mei',
+            name: 'Midori Festival',
+            location: 'Green Pramuka Square',
+            description: 'TBA'
         }
     ],
-    '2025-01-19': [
+    '2025-05-11': [
         {
-            date: '18-19 Januari',
-            name: 'Event 01',
-            location: 'Location',
-            description: 'info'
+            date: '10-11 Mei',
+            name: 'Midori Festival',
+            location: 'Green Pramuka Square',
+            description: 'TBA'
         }
     ],
-    '2025-02-08': [
+    '2025-05-24': [
         {
-            date: '08-09 Februari',
-            name: 'Mukashi',
-            location: 'SPARK',
-            description: 'No Booth'
+            date: '24-25 Mei',
+            name: 'Comifuro 20 (CFXX)',
+            location: 'ICE BSD',
+            description: 'Visiting'
         }
     ],
-    '2025-02-09': [
+    '2025-05-25': [
         {
-            date: '08-09 Februari',
-            name: 'Mukashi',
-            location: 'SPARK',
-            description: 'No Booth'
+            date: '24-25 Mei',
+            name: 'Comifuro 20 (CFXX)',
+            location: 'ICE BSD',
+            description: 'Visiting'
         }
     ],
-    '2025-04-26': [
+    '2025-10-25': [
         {
-            date: '26-27 April',
-            name: 'Indonesia Anime Conference (Inacon)',
-            location: 'Indonesia',
-            description: '26-27 Apr'
+            date: '25-26 Oktober',
+            name: 'Inacon & ICC',
+            location: 'JICC',
+            description: 'TBA'
         }
     ],
-    '2025-04-27': [
+    '2025-10-26': [
         {
-            date: '26-27 April',
-            name: 'Indonesia Anime Conference (Inacon)',
-            location: 'Indonesia',
-            description: '26-27 Apr'
+            date: '25-26 Oktober',
+            name: 'Inacon & ICC',
+            location: 'JICC',
+            description: 'TBA'
         }
     ]
 };
