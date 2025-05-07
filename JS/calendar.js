@@ -69,8 +69,17 @@ const events = {
     '2025-05-20': [
         {
             date: '20 Mei',
-            name: 'Live Streaming',
-            location: 'TikTok',
+            name: 'Live Streaming TikTok',
+            location: 'Jam 1 - 3 sore',
+            description: 'Roblox - Grow a Garden',
+            type: 'livestream'
+        }
+    ],
+    '2025-05-21': [
+        {
+            date: '20 Mei',
+            name: 'Live Streaming TikTok',
+            location: 'Jam 8 - 11 malam',
             description: 'Roblox - Grow a Garden',
             type: 'livestream'
         }
