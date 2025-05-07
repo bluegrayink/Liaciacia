@@ -113,12 +113,36 @@ h1 {
     color: red;
 }
 
-/* Tanggal yang memiliki event */
-.calendar-cell.event {
-    background-color: #5e3d9f;
+.calendar-cell.attendant-event {
+    background-color: pink;
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+}
+
+.calendar-cell.livestream-event {
+    background-color: purple;
     color: white;
     font-weight: bold;
-	border-radius: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+}
+
+.calendar-cell.today {
+    background-color: blue;
+     font-weight: bold;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,13 +155,6 @@ h1 {
 .calendar-cell.selected {
     outline: 2px solid #5e3d9f;
     background-color: #d1c4e9;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 16px;
-    height: 16px;
 }
 
 /* Daftar Event */
