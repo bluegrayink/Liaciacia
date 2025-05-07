@@ -5,9 +5,9 @@ body {
     background-color: #b19cd9;
     color: #333;
     display: flex;
-    justify-content: center; /* Untuk memusatkan secara horizontal */
-    min-height: 100vh; /* Menjamin body setinggi layar */
-    flex-direction: row; /* Elemen akan tersusun secara horizontal */
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: row;
 }
 
 /* Container Styling */
@@ -34,7 +34,7 @@ h1 {
 /* Calendar Container */
 .calendar-container {
     margin: 20px 0;
-	border-radius: 8px;
+    border-radius: 8px;
 }
 
 /* Calendar Header */
@@ -49,10 +49,10 @@ h1 {
 }
 
 .calendar-header0 img {
-    width: 100%; /* Gambar memenuhi lebar header */
-    max-width: 300px; /* Batas maksimum untuk gambar */
-    height: auto; /* Menjaga rasio gambar */
-    border-radius: 5px; /* Efek melengkung di sudut */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
     padding: 0px;
 }
 
@@ -70,7 +70,7 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
     background-color: #fff;
     padding: 5px 0;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .calendar-grid {
@@ -78,7 +78,7 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
     gap: 3px;
     margin-top: 0px;
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .calendar-cell {
@@ -90,6 +90,11 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+.calendar-cell:hover {
+    background-color: #e0e0e0;
+}
+
+/* Hari ini */
 .calendar-cell.today {
     background-color: #2196F3;
     color: white;
@@ -99,28 +104,38 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
 }
 
+/* Hari Minggu */
 .calendar-cell.sunday {
     color: red;
 }
 
+/* Tanggal yang memiliki event */
 .calendar-cell.event {
     background-color: #5e3d9f;
     color: white;
     font-weight: bold;
-	border-radius: 50%;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
 }
 
-/* Event List */
+/* Tanggal yang sedang dipilih */
+.calendar-cell.selected {
+    outline: 2px solid #5e3d9f;
+    background-color: #d1c4e9;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Daftar Event */
 .event-list {
     text-align: left;
     margin-top: 20px;
@@ -135,7 +150,7 @@ h1 {
 .event-list p,
 .event-item {
     font-size: 14px;
-	 color: #2a2c2f;
+    color: #2a2c2f;
     background-color: #fff;
     border: 1px solid #5e3d9f;
     padding: 10px;
@@ -143,10 +158,11 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Blok Event */
 .event-block {
     padding: 10px;
-	font-size: 14px;
-	 color: #2a2c2f;
+    font-size: 14px;
+    color: #2a2c2f;
     margin: 10px 0;
     border: 1px solid #5e3d9f;
     border-radius: 8px;
