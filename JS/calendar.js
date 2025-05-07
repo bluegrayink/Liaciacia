@@ -10,13 +10,15 @@ const monthNames = [
     "November", "December"
 ];
 
+// Update structure: Add `type` field
 const events = {
     '2025-05-10': [
         {
             date: '10-11 Mei',
             name: 'Midori Festival',
             location: 'Green Pramuka Square',
-            description: 'TBA'
+            description: 'TBA',
+            type: 'attendant'
         }
     ],
     '2025-05-11': [
@@ -24,7 +26,8 @@ const events = {
             date: '10-11 Mei',
             name: 'Midori Festival',
             location: 'Green Pramuka Square',
-            description: 'TBA'
+            description: 'TBA',
+            type: 'attendant'
         }
     ],
     '2025-05-24': [
@@ -32,7 +35,8 @@ const events = {
             date: '24-25 Mei',
             name: 'Comifuro 20 (CFXX)',
             location: 'ICE BSD',
-            description: 'Visiting'
+            description: 'Visiting',
+            type: 'attendant'
         }
     ],
     '2025-05-25': [
@@ -40,7 +44,8 @@ const events = {
             date: '24-25 Mei',
             name: 'Comifuro 20 (CFXX)',
             location: 'ICE BSD',
-            description: 'Visiting'
+            description: 'Visiting',
+            type: 'attendant'
         }
     ],
     '2025-10-25': [
@@ -48,7 +53,8 @@ const events = {
             date: '25-26 Oktober',
             name: 'Inacon & ICC',
             location: 'JICC',
-            description: 'TBA'
+            description: 'TBA',
+            type: 'attendant'
         }
     ],
     '2025-10-26': [
@@ -56,21 +62,28 @@ const events = {
             date: '25-26 Oktober',
             name: 'Inacon & ICC',
             location: 'JICC',
-            description: 'TBA'
+            description: 'TBA',
+            type: 'attendant'
+        }
+    ],
+    '2025-05-20': [
+        {
+            date: '20 Mei',
+            name: 'Live Streaming Cosplay',
+            location: 'YouTube / TikTok',
+            description: 'Live with Cellize',
+            type: 'streaming'
         }
     ]
 };
 
-
-// Initialize day names
 function initDayNames() {
-    dayRow.innerHTML = ''; // Kosongkan baris nama hari
+    dayRow.innerHTML = '';
     daysOfWeek.forEach((day, index) => {
         const dayCell = document.createElement('div');
         dayCell.classList.add('calendar-cell', 'day-header');
         dayCell.textContent = day;
 
-        // Jika indeks adalah 6 (hari Minggu), tambahkan gaya warna merah
         if (index === 6) {
             dayCell.style.color = 'red';
         }
@@ -79,7 +92,6 @@ function initDayNames() {
     });
 }
 
-// Generate calendar
 function generateCalendar(year, month) {
     headerTitle.textContent = `${monthNames[month]} ${year}`;
     calendarGrid.innerHTML = '';
@@ -87,32 +99,38 @@ function generateCalendar(year, month) {
     const firstDay = (new Date(year, month, 1).getDay() + 6) % 7;
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    // Add empty cells for the first row
     for (let i = 0; i < firstDay; i++) {
         calendarGrid.innerHTML += `<div class="calendar-cell empty"></div>`;
     }
 
-    // Add day cells
     for (let day = 1; day <= daysInMonth; day++) {
         const date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         const cell = document.createElement('div');
         cell.classList.add('calendar-cell');
         cell.textContent = day;
-        
-        const dayOfWeek = new Date(year, month, day).getDay();
 
-    // Highlight Sundays
-    if (dayOfWeek === 0) { // 0 represents Sunday
-        cell.classList.add('sunday');
-    }
+        const dayOfWeek = new Date(year, month, day).getDay();
+        if (dayOfWeek === 0) {
+            cell.classList.add('sunday');
+        }
 
         if (events[date]) {
-            cell.classList.add('event');
+            const types = events[date].map(e => e.type);
+            if (types.includes('attendant')) {
+                cell.style.backgroundColor = 'pink';
+            } else if (types.includes('streaming')) {
+                cell.style.backgroundColor = 'violet';
+            }
         }
 
         const today = new Date();
-        if (today.getFullYear() === year && today.getMonth() === month && today.getDate() === day) {
+        if (
+            today.getFullYear() === year &&
+            today.getMonth() === month &&
+            today.getDate() === day
+        ) {
             cell.classList.add('today');
+            cell.style.backgroundColor = 'lightblue';
         }
 
         cell.dataset.date = date;
@@ -129,11 +147,9 @@ function displayEventDetails(date) {
 
     if (eventData) {
         eventData.forEach(event => {
-            // Buat elemen event block
             const eventBlock = document.createElement('div');
             eventBlock.classList.add('event-block');
 
-            // Tambahkan elemen untuk setiap bagian (date, name, location, info)
             const eventDate = document.createElement('div');
             eventDate.textContent = event.date;
             eventDate.style.fontWeight = 'bold';
@@ -147,20 +163,21 @@ function displayEventDetails(date) {
             const eventDescription = document.createElement('div');
             eventDescription.textContent = event.description;
 
-            const eventInfo = document.createElement('a'); // Membuat hyperlink
-            eventInfo.href = event.info; // URL
-            eventInfo.textContent = 'More Info'; // Teks hyperlink
-            eventInfo.target = '_blank'; // Buka di tab baru
-            eventInfo.style.color = 'blue'; // Gaya opsional
-
-            // Gabungkan semua elemen ke dalam event block
             eventBlock.appendChild(eventDate);
             eventBlock.appendChild(eventName);
             eventBlock.appendChild(eventLocation);
             eventBlock.appendChild(eventDescription);
-            eventBlock.appendChild(eventInfo);
 
-            // Tambahkan event block ke dalam event list
+            // Optional: show link if exists
+            if (event.info) {
+                const eventInfo = document.createElement('a');
+                eventInfo.href = event.info;
+                eventInfo.textContent = 'More Info';
+                eventInfo.target = '_blank';
+                eventInfo.style.color = 'blue';
+                eventBlock.appendChild(eventInfo);
+            }
+
             eventList.appendChild(eventBlock);
         });
     } else {
@@ -170,7 +187,6 @@ function displayEventDetails(date) {
         eventList.appendChild(noEventItem);
     }
 }
-
 
 // Initialize
 let currentDate = new Date();
@@ -187,8 +203,6 @@ document.getElementById('prev-month').addEventListener('click', () => {
         currentYear--;
     }
     generateCalendar(currentYear, currentMonth);
-
-    // Reset event box to default
     eventList.innerHTML = '<h2>Event Details</h2><div class="event-item">No events on this day.</div>';
 });
 
@@ -199,7 +213,5 @@ document.getElementById('next-month').addEventListener('click', () => {
         currentYear++;
     }
     generateCalendar(currentYear, currentMonth);
-
-    // Reset event box to default
     eventList.innerHTML = '<h2>Event Details</h2><div class="event-item">No events on this day.</div>';
 });
