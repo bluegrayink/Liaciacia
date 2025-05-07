@@ -72,7 +72,7 @@ const events = {
             name: 'Live Streaming',
             location: 'TikTok',
             description: 'Roblox - Grow a Garden',
-            type: 'livestreaming'
+            type: 'livestream'
         }
     ]
 };
