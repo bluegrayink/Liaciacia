@@ -114,6 +114,16 @@ function generateCalendar(year, month) {
             cell.classList.add('sunday');
         }
 
+         if (events[date]) {
+            const types = new Set(events[date].map(e => e.type));
+            if (types.has('attendant')) {
+                cell.classList.add('attendant-event');
+            }
+            if (types.has('livestream')) {
+                cell.classList.add('livestream-event');
+            }
+        }
+        
         const today = new Date();
         if (
             today.getFullYear() === year &&
