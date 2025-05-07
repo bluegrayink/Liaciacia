@@ -108,7 +108,7 @@ h1 {
 }
 
 .calendar-cell.attendant-event {
-    background-color: #FF5733;
+    background-color: #F8C8DC,;
     color: black;
     border-radius: 50%;
     display: flex;
