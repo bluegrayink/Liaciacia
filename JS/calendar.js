@@ -114,15 +114,6 @@ function generateCalendar(year, month) {
             cell.classList.add('sunday');
         }
 
-        if (events[date]) {
-            const types = events[date].map(e => e.type);
-            if (types.includes('attendant')) {
-                cell.style.backgroundColor = 'pink';
-            } else if (types.includes('streaming')) {
-                cell.style.backgroundColor = 'violet';
-            }
-        }
-
         const today = new Date();
         if (
             today.getFullYear() === year &&
