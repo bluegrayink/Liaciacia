@@ -96,9 +96,32 @@ h1 {
 
 /* Hari ini */
 .calendar-cell.today {
-    background-color: #2196F3;
-    color: white;
-    font-weight: bold;
+    background-color: #89CFF0;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+}
+
+.calendar-cell.attendant-event {
+    background-color: #FF5733;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+}
+
+.calendar-cell.livestream-event {
+    background-color: #DA70D6;
+    color: black;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -111,44 +134,6 @@ h1 {
 /* Hari Minggu */
 .calendar-cell.sunday {
     color: red;
-}
-
-.calendar-cell.attendant-event {
-    background-color: pink;
-    color: black;
-    font-weight: bold;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 16px;
-    height: 16px;
-}
-
-.calendar-cell.livestream-event {
-    background-color: purple;
-    color: white;
-    font-weight: bold;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 16px;
-    height: 16px;
-}
-
-.calendar-cell.today {
-    background-color: blue;
-     font-weight: bold;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 16px;
-    height: 16px;
 }
 
 /* Tanggal yang sedang dipilih */
