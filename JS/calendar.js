@@ -69,10 +69,10 @@ const events = {
     '2025-05-20': [
         {
             date: '20 Mei',
-            name: 'Live Streaming Cosplay',
-            location: 'YouTube / TikTok',
-            description: 'Live with Cellize',
-            type: 'streaming'
+            name: 'Live Streaming',
+            location: 'TikTok',
+            description: 'Roblox - Grow a Garden',
+            type: 'livestreaming'
         }
     ]
 };
