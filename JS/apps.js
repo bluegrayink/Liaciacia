@@ -1,5 +1,5 @@
 const uidToPageMap = {
-    "calendar.html": ["000AAA", "LIA00CAL"]
+    "calendar.html": ["E45FAD51","447E9951","84290293","LIA00CAL"]
 };
 
 // Elements
